@@ -21,12 +21,14 @@ export default function App() {
   useEffect(() => {
     axios.get(FEATURED_API).then((res) => {
       setMovies(res.data.results);
+      // console.log(movies);
     });
   }, []);
 
   const getMovies = () => {
     axios.get(SEARCH_API + searchTerm).then((res) => {
       setMovies(res.data.results);
+      console.log(movies);
     });
   };
 
